@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ansno: 1
+  body: MyText
+  doubt: one
+
+two:
+  ansno: 1
+  body: MyText
+  doubt: two

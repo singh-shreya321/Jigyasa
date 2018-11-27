@@ -1,0 +1,5 @@
+<%= @course.name %>
+<h2> <%= @course.doubts.count %> Questions</h2>
+<%= render @course.doubts %>
+<h3> Ask a question: </h3>
+<%= render "doubts/form" %>

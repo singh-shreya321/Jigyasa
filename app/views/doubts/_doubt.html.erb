@@ -1,0 +1,8 @@
+<div id = "page_wrapper">
+  <p> <%= link_to doubt.title, course_doubt_path(doubt.course_id, doubt) %> </p>
+  <p> <%= doubt.body %></p>
+  <p><%= time_ago_in_words(doubt.created_at) %> Ago </p>
+  <br>
+  <p><%= link_to 'Delete', [doubt.course, doubt], method: :delete,
+                                                  data: { confirm: "Are you sure?"} %>
+</div>

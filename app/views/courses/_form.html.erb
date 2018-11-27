@@ -1,0 +1,17 @@
+<%= form_with scope: :course, url: courses_path, local: true do |form| %>
+
+<p>
+  <%= form.label :Course_ID %><br>
+  <%= form.text_area :courseid %>
+</p>
+
+
+<p>
+  <%= form.label :Name %><br>
+  <%= form.text_area :name %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
