@@ -1,8 +1,6 @@
 <div id = "page_wrapper">
   <p> <%= answer.ansno%> </p>
   <p> <%= answer.body %></p>
-  <p><%= time_ago_in_words(doubt.created_at) %> Ago </p>
+  <p><%= time_ago_in_words(answer.created_at) %> Ago </p>
   <br>
-  <p><%= link_to 'Delete', [answer.doubt.course, doubt, course], method: :delete,
-                                                  data: { confirm: "Are you sure?"} %>
 </div>

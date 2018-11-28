@@ -1,9 +1,10 @@
 class AnswersController < ApplicationController
   def create
-    @course = Course.find(params[:course_id])
-    @doubt = @course.find[params[:doubt_id]]
-    @answer = @course.@doubt.answers.create(params[:answer].permit(:ansno, :body))
-    redirect_to courses_path(@course)
+    # @course = Course.find(params[:course_id])
+    @doubt = Doubt.find(params[:doubt_id])
+    @answer = @doubt.answers.create(params[:answer].permit(:ansno, :body))
+
+    redirect_to doubt_path(@doubt)
   end
 
   # def destroy
