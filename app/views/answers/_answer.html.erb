@@ -1,7 +1,7 @@
 <div id = "page_wrapper">
   <!-- <p> <%= answer.ansno%> </p> -->
   <p> <%= answer.body %></p>
-  <p><%= time_ago_in_words(answer.created_at) %> Ago </p>
+  <h6><p><%= time_ago_in_words(answer.created_at) %> Ago </p></h6>
   <td><% if current_user == answer.user %></td>
   <p><%= link_to 'Delete', [answer], method: :delete,
                                                   data: { confirm: "Are you sure?"} %>
