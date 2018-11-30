@@ -3,7 +3,7 @@
   <p> <%= doubt.body %></p>
   <!-- <p> <%= doubt.user.email %></p> -->
   <p><%= time_ago_in_words(doubt.created_at) %> Ago </p>
-  <td><% if current_user == doubt.user %></td>
+  <td><% if current_user == doubt.user or current_user.admin? %></td>
   <p><%= link_to 'Delete', [doubt], method: :delete,
                                                   data: { confirm: "Are you sure?"} %>
   <% end %>
