@@ -18,6 +18,8 @@ class DoubtsController < ApplicationController
     @doubt = Doubt.find(params[:id])
   end
 
+
+
   def destroy
 		# @course = Course.find(params[:course_id])
 		@doubt = Doubt.find(params[:id])
