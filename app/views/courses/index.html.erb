@@ -1,8 +1,10 @@
 <div id = "page_wrapper">
   <h1>Course List </h1>
   <% @courses.each do |course| %>
-    <h2><%= link_to course.name, course_path(course) %></h2>
+    <h3><%= link_to course.name, course_path(course) %></h3>
     <!-- <p><%= course.name %></p> -->
     <!-- <p><%= course.created_at.strftime("%B, %d, %Y") %></p> -->
   <% end %>
+
+<%= link_to 'Add Course', new_course_path %>
 </div>

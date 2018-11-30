@@ -7,11 +7,11 @@ class AnswersController < ApplicationController
     redirect_to doubt_path(@doubt)
   end
 
-  # def destroy
-  #   @course = Course.find(params[:course_id])
-  #   @doubt = @course.doubts.find(params[:id])
-  #   @doubt.destroy
-  #
-  #   redirect_to course_path(@course)
-  # end
+  def destroy
+    # @course = Course.find(params[:course_id])
+    @answer = Answer.find(params[:id])
+    @doubt = @answer.doubt
+    @answer.destroy
+    redirect_to doubt_path(@doubt)
+  end
 end

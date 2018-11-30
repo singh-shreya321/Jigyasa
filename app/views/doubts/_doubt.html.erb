@@ -2,7 +2,6 @@
   <p> <%= link_to doubt.title, doubt_path(doubt) %> </p>
   <p> <%= doubt.body %></p>
   <p><%= time_ago_in_words(doubt.created_at) %> Ago </p>
-  <br>
   <p><%= link_to 'Delete', [doubt], method: :delete,
                                                   data: { confirm: "Are you sure?"} %>
 </div>

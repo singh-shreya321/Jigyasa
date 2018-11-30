@@ -1,7 +1,8 @@
-<%= @doubt.title %>
+<h2><%= @doubt.title %></h2>
 <br>
 <%= @doubt.body %>
 <h2> <%= @doubt.answers.count %> Answers</h2>
-# <%= render @doubt.answers %>
+<%= render @doubt.answers %>
+<%= link_to 'Back', course_path(@doubt.course) %>
 <h3> Add an Answer: </h3>
-# <%= render "answers/form" %>
+<%= render "answers/form" %>

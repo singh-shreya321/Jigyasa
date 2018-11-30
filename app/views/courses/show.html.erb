@@ -1,5 +1,6 @@
-<%= @course.name %>
-<h2> <%= @course.doubts.count %> Questions</h2>
+<h2><%= @course.name %></h2>
+<h4> <%= @course.doubts.count %> Questions</h4>
 <%= render @course.doubts %>
+<%= link_to 'Go Back to Course List', courses_path %>
 <h3> Ask a question: </h3>
 <%= render "doubts/form" %>

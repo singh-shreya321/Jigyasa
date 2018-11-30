@@ -14,8 +14,8 @@ class DoubtsController < ApplicationController
   def destroy
 		# @course = Course.find(params[:course_id])
 		@doubt = Doubt.find(params[:id])
+    @course = @doubt.course
 		@doubt.destroy
-
 		redirect_to course_path(@course)
 	end
 end
