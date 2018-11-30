@@ -1,6 +1,6 @@
 class DoubtsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :correct_user,       only: [:destroy, :edit]
+  before_action :correct_user,       only: [:destroy, :edit, :update]
 
   def create
     @course = Course.find(params[:course_id])
@@ -18,6 +18,20 @@ class DoubtsController < ApplicationController
     @doubt = Doubt.find(params[:id])
   end
 
+  def edit
+		@doubt = Doubt.find(params[:id])
+	end
+
+	def update
+		@doubt = Doubt.find(params[:id])
+
+		if @doubt.update(params[:doubt].permit(:title, :body))
+			redirect_to course_path(@doubt.course)
+		else
+			render 'edit'
+		end
+  end
+
 
 
   def destroy
@@ -31,7 +45,7 @@ class DoubtsController < ApplicationController
   private
     def correct_user
       @doubt = current_user.doubts.find_by(id: params[:id])
-      if @doubt.nil?
+      if @doubt.nil? and !current_user.admin?
         flash[:alert] = "Not your post!"
         redirect_to root_path
       end

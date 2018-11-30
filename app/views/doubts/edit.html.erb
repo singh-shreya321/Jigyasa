@@ -1,0 +1,21 @@
+<div id="page_wrapper">
+  <h1>Edit Doubt </h1>
+
+  <%= form_with(model: @doubt) do |form| %>
+
+    <p>
+      <%= form.label :Title %><br>
+      <%= form.text_field :title %>
+    </p>
+
+    <p>
+      <%= form.label :Description %><br>
+      <%= form.text_area :body %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+</div>

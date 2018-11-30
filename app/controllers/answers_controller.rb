@@ -13,6 +13,20 @@ class AnswersController < ApplicationController
     end
   end
 
+  def edit
+		@answer = Answer.find(params[:id])
+	end
+
+	def update
+		@answer = Answer.find(params[:id])
+
+		if @answer.update(params[:answer].permit(:ansno, :body))
+			redirect_to doubt_path(@answer.doubt)
+		else
+			render 'edit'
+		end
+  end
+
   def destroy
     # @course = Course.find(params[:course_id])
     @answer = Answer.find(params[:id])
@@ -23,8 +37,9 @@ class AnswersController < ApplicationController
 
   private
     def correct_user
+      # @current_user = User.find(session[:user_id])
       @answer = current_user.answers.find_by(id: params[:id])
-      if @answer.nil?
+      if @answer.nil? and !current_user.admin?
         flash[:alert] = "Not your answer!"
         redirect_to root_path
       end
