@@ -11,8 +11,9 @@
       <!-- <p><%= course.name %></p> -->
       <!-- <p><%= course.created_at.strftime("%B, %d, %Y") %></p> -->
       <% end %>
-
-      <%= link_to 'Add Course', new_course_path %>
+      <% if current_user.admin? %>
+        <%= link_to 'Add Course', new_course_path %>
+      <% end %>
       <br>
       <%= link_to('Logout', destroy_user_session_path, :method => 'delete') %>
   <% end %>
