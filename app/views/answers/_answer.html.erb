@@ -2,7 +2,9 @@
   <!-- <p> <%= answer.ansno%> </p> -->
   <p> <%= answer.body %></p>
   <p><%= time_ago_in_words(answer.created_at) %> Ago </p>
+  <td><% if current_user == answer.user %></td>
   <p><%= link_to 'Delete', [answer], method: :delete,
                                                   data: { confirm: "Are you sure?"} %>
   <br>
+  <% end %>
 </div>

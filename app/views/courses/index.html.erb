@@ -1,10 +1,19 @@
 <div id = "page_wrapper">
-  <h1>Course List </h1>
-  <% @courses.each do |course| %>
-    <h3><%= link_to course.name, course_path(course) %></h3>
-    <!-- <p><%= course.name %></p> -->
-    <!-- <p><%= course.created_at.strftime("%B, %d, %Y") %></p> -->
+  <% if !user_signed_in? %>
+    <button class="button"><%= link_to "Sign In", new_user_session_path%></button>
+    <button class="button"><%= link_to "Sign Up", new_user_registration_path %></button>
   <% end %>
 
-<%= link_to 'Add Course', new_course_path %>
+  <% if user_signed_in? %>
+    <h2>Course List </h2>
+    <% @courses.each do |course| %>
+      <h3><%= link_to course.name, course_path(course) %></h3>
+      <!-- <p><%= course.name %></p> -->
+      <!-- <p><%= course.created_at.strftime("%B, %d, %Y") %></p> -->
+      <% end %>
+
+      <%= link_to 'Add Course', new_course_path %>
+      <br>
+      <%= link_to('Logout', destroy_user_session_path, :method => 'delete') %>
+  <% end %>
 </div>
