@@ -1,7 +1,7 @@
 User.create!([
   {email: "shreyasingh@gmail.com", password: "shreya", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: true},
   {email: "nimishagarg@gmail.com", password: "nimisha", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: false},
-  {email: "akshi025@gmail.com", password: "akshi", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: false},
+  {email: "akshi025@gmail.com", password: "akshi025", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: false},
   {email: "muditabaid@gmail.com", password: "mudita", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, admin: false}
 ])
 Course.create!([
